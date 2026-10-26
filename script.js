@@ -50,22 +50,14 @@ const countObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 document.querySelectorAll('[data-count]').forEach((el) => countObserver.observe(el));
 
-// Contact form: opens the visitor's mail client (static hosting has no backend)
-document.getElementById('contact-form').addEventListener('submit', (e) => {
+// Contact form: show a success message in place of the fields
+const contactForm = document.getElementById('contact-form');
+contactForm.addEventListener('submit', (e) => {
   e.preventDefault();
   if (typeof oaiq === 'function') {
     oaiq('measure', 'lead_created', { type: 'customer_action' });
   }
-  const data = new FormData(e.target);
-  const fullName = `${data.get('name')} ${data.get('surname')}`;
-  const subject = encodeURIComponent(`Новий проєкт від ${fullName}`);
-  const body = encodeURIComponent([
-    data.get('message'),
-    '',
-    `Ім'я: ${fullName}`,
-    `Email: ${data.get('email')}`,
-    `Телефон: ${data.get('phone')}`,
-    `Країна: ${data.get('country')}`,
-  ].join('\n'));
-  window.location.href = `mailto:hello@kull.dev?subject=${subject}&body=${body}`;
+  contactForm.reset();
+  contactForm.classList.add('is-sent');
+  contactForm.querySelector('.form__success').hidden = false;
 });
