@@ -147,7 +147,7 @@
           </div>
           <div class="form__row">
             <label>Email<input name="email" type="email" required autocomplete="email"></label>
-            <label>Телефон<input name="phone" type="tel" required autocomplete="tel" placeholder="+380 XX XXX XX XX"></label>
+            <label>Телефон<input name="phone" type="tel" required autocomplete="tel" placeholder="+380 XX XXX XX XX" pattern="\+?[1-9][0-9\s\(\)\-]{7,20}" title="Номер у міжнародному форматі, напр. +380 50 123 45 67"></label>
           </div>
           <label>Країна<input name="country" required autocomplete="country-name" list="countries"></label>
           <datalist id="countries">
