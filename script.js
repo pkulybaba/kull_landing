@@ -53,6 +53,9 @@ document.querySelectorAll('[data-count]').forEach((el) => countObserver.observe(
 // Contact form: opens the visitor's mail client (static hosting has no backend)
 document.getElementById('contact-form').addEventListener('submit', (e) => {
   e.preventDefault();
+  if (typeof oaiq === 'function') {
+    oaiq('measure', 'lead_created', { type: 'customer_action' });
+  }
   const data = new FormData(e.target);
   const fullName = `${data.get('name')} ${data.get('surname')}`;
   const subject = encodeURIComponent(`Новий проєкт від ${fullName}`);
