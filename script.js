@@ -54,7 +54,15 @@ document.querySelectorAll('[data-count]').forEach((el) => countObserver.observe(
 document.getElementById('contact-form').addEventListener('submit', (e) => {
   e.preventDefault();
   const data = new FormData(e.target);
-  const subject = encodeURIComponent(`Новий проєкт від ${data.get('name')}`);
-  const body = encodeURIComponent(`${data.get('message')}\n\n${data.get('name')} <${data.get('email')}>`);
+  const fullName = `${data.get('name')} ${data.get('surname')}`;
+  const subject = encodeURIComponent(`Новий проєкт від ${fullName}`);
+  const body = encodeURIComponent([
+    data.get('message'),
+    '',
+    `Ім'я: ${fullName}`,
+    `Email: ${data.get('email')}`,
+    `Телефон: ${data.get('phone')}`,
+    `Країна: ${data.get('country')}`,
+  ].join('\n'));
   window.location.href = `mailto:hello@kull.dev?subject=${subject}&body=${body}`;
 });
