@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KULL — розробка програмного забезпечення</title>
+  <meta name="description" content="KULL — команда інженерів, що створює вебзастосунки, мобільні додатки та хмарні рішення для бізнесу.">
+  <meta property="og:title" content="KULL — розробка програмного забезпечення">
+  <meta property="og:description" content="Вебзастосунки, мобільні додатки та хмарні рішення під ключ.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a href="#top" class="logo" aria-label="KULL — на початок">
+        <span class="logo__mark">K</span>KULL
+      </a>
+      <nav class="nav__links" id="nav-links">
+        <a href="#services">Послуги</a>
+        <a href="#process">Процес</a>
+        <a href="#stack">Технології</a>
+        <a href="#contact">Контакти</a>
+      </nav>
+      <a href="#contact" class="btn btn--small nav__cta">Обговорити проєкт</a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Меню" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <p class="eyebrow">Software development company</p>
+        <h1>Створюємо програмне забезпечення, яке <span class="accent">працює на ваш бізнес</span></h1>
+        <p class="hero__lead">KULL — команда інженерів, дизайнерів і продакт-менеджерів. Проєктуємо, розробляємо та підтримуємо вебзастосунки, мобільні додатки й хмарну інфраструктуру — від ідеї до продакшну.</p>
+        <div class="hero__actions">
+          <a href="#contact" class="btn">Отримати оцінку проєкту</a>
+          <a href="#services" class="btn btn--ghost">Що ми робимо →</a>
+        </div>
+        <pre class="hero__code" aria-hidden="true"><code><span class="c-k">const</span> project = <span class="c-k">await</span> kull.<span class="c-f">build</span>({
+  idea: <span class="c-s">"ваша"</span>,
+  quality: <span class="c-s">"production-grade"</span>,
+  deadline: <span class="c-s">"вчасно"</span>,
+});
+<span class="c-c">// ✓ deployed in 0.42s</span></code></pre>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container stats__grid">
+        <div class="stat"><span class="stat__num" data-count="50">0</span><span class="stat__suffix">+</span><p>завершених проєктів</p></div>
+        <div class="stat"><span class="stat__num" data-count="25">0</span><span class="stat__suffix">+</span><p>інженерів у команді</p></div>
+        <div class="stat"><span class="stat__num" data-count="8">0</span><span class="stat__suffix"> років</span><p>на ринку</p></div>
+        <div class="stat"><span class="stat__num" data-count="98">0</span><span class="stat__suffix">%</span><p>клієнтів повертаються</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <p class="eyebrow">Послуги</p>
+        <h2>Повний цикл розробки</h2>
+        <div class="cards">
+          <article class="card reveal">
+            <div class="card__icon">⌘</div>
+            <h3>Веброзробка</h3>
+            <p>SPA, SaaS-платформи, корпоративні портали та e-commerce. Швидкі, безпечні й масштабовані.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card__icon">◱</div>
+            <h3>Мобільні застосунки</h3>
+            <p>Нативні та кросплатформні додатки для iOS і Android з продуманим UX.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card__icon">☁</div>
+            <h3>Cloud &amp; DevOps</h3>
+            <p>Архітектура в AWS, GCP та Azure, CI/CD, Kubernetes, моніторинг і оптимізація витрат.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card__icon">✦</div>
+            <h3>AI-рішення</h3>
+            <p>Інтеграція LLM, чат-боти, автоматизація процесів і аналітика даних.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card__icon">◎</div>
+            <h3>UI/UX дизайн</h3>
+            <p>Дослідження користувачів, прототипи та дизайн-системи, які легко масштабувати.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card__icon">⟲</div>
+            <h3>Підтримка та аудит</h3>
+            <p>Code review, рефакторинг легасі, технічний аудит і супровід продуктів 24/7.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="process">
+      <div class="container">
+        <p class="eyebrow">Процес</p>
+        <h2>Як ми працюємо</h2>
+        <ol class="steps">
+          <li class="step reveal"><span class="step__n">01</span><h3>Discovery</h3><p>Розбираємося в бізнес-цілях, формуємо вимоги та оцінку.</p></li>
+          <li class="step reveal"><span class="step__n">02</span><h3>Дизайн</h3><p>Прототипуємо, тестуємо гіпотези, погоджуємо архітектуру.</p></li>
+          <li class="step reveal"><span class="step__n">03</span><h3>Розробка</h3><p>Двотижневі спринти, демо після кожного, прозорий прогрес.</p></li>
+          <li class="step reveal"><span class="step__n">04</span><h3>Запуск і ріст</h3><p>Реліз, моніторинг, підтримка та розвиток продукту.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="stack">
+      <div class="container">
+        <p class="eyebrow">Технології</p>
+        <h2>Наш стек</h2>
+        <ul class="tags">
+          <li>TypeScript</li><li>React</li><li>Next.js</li><li>Vue</li><li>Node.js</li>
+          <li>Python</li><li>Go</li><li>Java</li><li>Flutter</li><li>Swift</li><li>Kotlin</li>
+          <li>PostgreSQL</li><li>MongoDB</li><li>Redis</li><li>Kafka</li>
+          <li>Docker</li><li>Kubernetes</li><li>Terraform</li><li>AWS</li><li>GCP</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--cta" id="contact">
+      <div class="container contact">
+        <div>
+          <p class="eyebrow">Контакти</p>
+          <h2>Розкажіть про ваш проєкт</h2>
+          <p class="muted">Відповімо протягом одного робочого дня з першими ідеями та орієнтовною оцінкою.</p>
+          <ul class="contact__list">
+            <li><span>Email</span><a href="mailto:hello@kull.dev">hello@kull.dev</a></li>
+            <li><span>Телефон</span><a href="tel:+380000000000">+380 00 000 00 00</a></li>
+            <li><span>Офіс</span>Київ, Україна</li>
+          </ul>
+        </div>
+        <form class="form" id="contact-form">
+          <label>Ім'я<input name="name" required autocomplete="name"></label>
+          <label>Email<input name="email" type="email" required autocomplete="email"></label>
+          <label>Про проєкт<textarea name="message" rows="4" required></textarea></label>
+          <button class="btn" type="submit">Надіслати</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#top" class="logo"><span class="logo__mark">K</span>KULL</a>
+      <p>© <span id="year"></span> KULL. Усі права захищені.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
