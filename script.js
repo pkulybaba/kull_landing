@@ -50,29 +50,11 @@ const countObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 document.querySelectorAll('[data-count]').forEach((el) => countObserver.observe(el));
 
-// Pixel expects ISO 3166-1 alpha-2 country codes
-const COUNTRY_CODES = {
-  'Україна': 'ua', 'Польща': 'pl', 'Німеччина': 'de', 'Велика Британія': 'gb',
-  'США': 'us', 'Канада': 'ca', 'Нідерланди': 'nl', 'Чехія': 'cz',
-  'Іспанія': 'es', 'Франція': 'fr', 'Італія': 'it', 'Швеція': 'se',
-};
-
-// Contact form: pass the lead's details to Pixel, then show a success message
+// Contact form: show a success message in place of the fields
 const contactForm = document.getElementById('contact-form');
 contactForm.addEventListener('submit', (e) => {
   e.preventDefault();
   if (typeof oaiq === 'function') {
-    const data = new FormData(contactForm);
-    // Pixel normalizes and SHA-256 hashes these in the browser before sending
-    const user = {
-      email_sha256: data.get('email'),
-      phone_number_sha256: data.get('phone'),
-      first_name_sha256: data.get('name'),
-      last_name_sha256: data.get('surname'),
-    };
-    const country = COUNTRY_CODES[data.get('country').trim()];
-    if (country) user.country = country;
-    oaiq('init', { user });
     oaiq('measure', 'lead_created', { type: 'customer_action' });
   }
   contactForm.reset();
